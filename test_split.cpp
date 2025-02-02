@@ -15,29 +15,29 @@ int main(int argc, char* argv[])
 {
   
   Node* head=new Node(1,nullptr);
-  Node* currTail=head;
+  Node* curr=head;
   for(int i=2; i<10; i++){
     Node* newNode= new Node(i,nullptr);
-    currTail->next=newNode;
-    currTail=newNode;
+    curr->next=newNode;
+    curr=newNode;
   }
   Node* odds=nullptr;
   Node* evens=nullptr;
 
   split(head,odds,evens);
 
-  Node* currElement=odds;
-  while (currElement!=nullptr){
-    Node*nextElement=currElement->next;
-    delete currElement;
-    currElement= nextElement;
+  Node* curr_=odds;
+  while (curr_!=nullptr){
+    Node*next=curr_->next;
+    delete curr_;
+    curr_= next;
   }
 
-  Node* currElement2=evens;
-  while (currElement2!=nullptr){
-    Node*nextElement2=currElement2->next;
-    delete currElement2;
-    currElement2= nextElement2;
+  Node* curr_2=evens;
+  while (curr_2!=nullptr){
+    Node*next2=curr_2->next;
+    delete curr_2;
+    curr_2= next2;
   }
 
 }
